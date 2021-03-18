@@ -1,10 +1,10 @@
 from flask import Flask
 
-app = Flask("microblog")
+# app = Flask("microblog")
 
-#aqui vai comentário
-@app.route('/')
-def index():
-    return "Olá mundo"
+# #aqui vai comentário
+# @app.route('/')
+# def index():
+#     return "Olá mundo"
 
-app.run()
+# app.run()
