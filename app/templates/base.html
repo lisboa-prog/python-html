@@ -1,3 +1,4 @@
+  
 <html>
     <head>
       {% if title %}
@@ -6,25 +7,15 @@
       <title>Welcome to Microblog</title>
       {% endif %}
     </head>
-    <style>
-        body{
-            height: 2000px;
-            margin-left: 50px;
-            margin-right: 50px;
-            background-image: linear-gradient(to right top, #114ea9, #0084c9, #00b1be, #58d7a3, #d8f499);
-        
-        }
-        h1{
-            text-align: center;
-            color: #4f1271;
-            font-style: italic;
-            text-shadow: 10px 10px 10px rgb(50, 5, 75);
-            margin: auto;
-            
-        }
-    </style>
     <body>
-        <div>Microblog: <a href="/index">Home</a></div>
+        <div>Microblog: 
+            <a href="/index">Home</a>
+            {% if current_user.is_anonymous %}
+            <a href="/login">Sign In</a>
+            {% else %}
+            <a href="/logout">LogOut</a>
+            {% endif %}
+        </div>
         <hr>
         {% block content %}{% endblock %}
     </body>
